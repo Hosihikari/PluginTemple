@@ -10,6 +10,9 @@
     <Reference Include="Loader">
       <HintPath>..\..\Loader\src\bin\Release\net7.0\Loader.dll</HintPath>
     </Reference>
+    <Reference Include="Minecraft">
+      <HintPath>..\..\Minecraft\src\bin\Release\net7.0\Minecraft.dll</HintPath>
+    </Reference>
     <Reference Include="NativeInterop">
       <HintPath>..\..\NativeInterop\src\bin\Release\net7.0\NativeInterop.dll</HintPath>
     </Reference>
