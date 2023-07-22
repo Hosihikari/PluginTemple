@@ -1,4 +1,4 @@
-﻿using Loader;
+﻿using Hosihikari.Loader;
 
 [assembly: EntryPoint<PluginUnitTest.UnitTest>]
 
