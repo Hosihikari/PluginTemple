@@ -9,12 +9,15 @@
   <ItemGroup>
     <Reference Include="Loader">
       <HintPath>..\..\Loader\src\bin\Release\net7.0\Loader.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Minecraft">
       <HintPath>..\..\Minecraft\src\bin\Release\net7.0\Minecraft.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="NativeInterop">
       <HintPath>..\..\NativeInterop\src\bin\Release\net7.0\NativeInterop.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
 

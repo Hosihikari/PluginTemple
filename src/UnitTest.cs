@@ -35,7 +35,9 @@ public class UnitTest : IPlugin
     {
         var assembly = Assembly.GetExecutingAssembly();
         var types = assembly.GetTypes();
-        var trimLength = Path.GetDirectoryName(sourceFile)!.Length + "Testcase\\".Length;
+        var trimLength =
+            sourceFile.IndexOf(nameof(UnitTest), StringComparison.Ordinal) + "Testcase\\".Length;
+
         foreach (var type in types)
         {
             if (
