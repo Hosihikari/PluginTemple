@@ -6,7 +6,14 @@ internal class LevelTickTest : TestItem
     {
         Minecraft.LevelTick.PostTick(() =>
         {
-            MarkSuccess();
+            if (Minecraft.LevelTick.IsInTickThread)
+            {
+                MarkSuccess();
+            }
+            else
+            {
+                MarkFailed("Not in tick thread.");
+            }
         });
     }
 }
