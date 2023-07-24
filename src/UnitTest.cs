@@ -1,21 +1,22 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using Hosihikari.Loader;
+using Hosihikari.PluginUnitTest;
 
-[assembly: EntryPoint<PluginUnitTest.UnitTest>]
+[assembly: EntryPoint<UnitTest>]
 
-namespace PluginUnitTest;
+namespace Hosihikari.PluginUnitTest;
 
-public class UnitTest : IPlugin
+public class UnitTest : IEntryPoint
 {
-    internal List<TestItem> TaskList = new();
-
-    public void Initialize(Plugin plugin)
+    public void Initialize(AssemblyPlugin plugin)
     {
         WriteLine(" Searching All Testcase.");
         AddAllItemToList();
         WriteLine(" Searching All Testcase Success.");
     }
+
+    internal List<TestItem> TaskList = new();
 
     private void WriteLine(string str)
     {

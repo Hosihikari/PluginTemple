@@ -1,4 +1,4 @@
-﻿namespace PluginUnitTest.Testcase;
+﻿namespace Hosihikari.PluginUnitTest.Testcase;
 
 internal class RunInTick : TestItem
 {
