@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Hosihikari.PluginUnitTest;
+namespace Hosihikari.UnitTest;
 
 internal abstract class TestItem
 {

@@ -1,11 +1,10 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using Hosihikari.Loader;
-using Hosihikari.PluginUnitTest;
 
 [assembly: EntryPoint<UnitTest>]
 
-namespace Hosihikari.PluginUnitTest;
+namespace Hosihikari.UnitTest;
 
 public class UnitTest : IEntryPoint
 {
