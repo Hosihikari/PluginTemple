@@ -7,15 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Loader">
+    <Reference Include="Hosihikari.Loader">
       <HintPath>..\..\Loader\src\bin\Release\net7.0\Hosihikari.Loader.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Minecraft.Extension">
+    <Reference Include="Hosihikari.Minecraft.Extension">
       <HintPath>..\..\Extension\src\bin\Release\net7.0\Hosihikari.Minecraft.Extension.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="NativeInterop">
+    <Reference Include="Hosihikari.NativeInterop">
       <HintPath>..\..\NativeInterop\src\bin\Release\net7.0\Hosihikari.NativeInterop.dll</HintPath>
       <Private>False</Private>
     </Reference>
