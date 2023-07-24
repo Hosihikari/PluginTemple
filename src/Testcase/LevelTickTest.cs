@@ -1,12 +1,14 @@
-﻿namespace Hosihikari.PluginUnitTest.Testcase;
+﻿using Hosihikari.Minecraft.Extension;
+
+namespace Hosihikari.UnitTest.Testcase;
 
 internal class LevelTickTest : TestItem
 {
     public override void Start()
     {
-        Minecraft.LevelTick.PostTick(() =>
+        LevelTick.PostTick(() =>
         {
-            if (Minecraft.LevelTick.IsInTickThread)
+            if (LevelTick.IsInTickThread)
             {
                 MarkSuccess();
             }

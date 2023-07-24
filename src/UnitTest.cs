@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using Hosihikari.Loader;
+using Hosihikari.UnitTest;
 
 [assembly: EntryPoint<UnitTest>]
 

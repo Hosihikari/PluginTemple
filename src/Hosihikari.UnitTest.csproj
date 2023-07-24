@@ -11,8 +11,8 @@
       <HintPath>..\..\Loader\src\bin\Release\net7.0\Hosihikari.Loader.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Minecraft">
-      <HintPath>..\..\Minecraft\src\bin\Release\net7.0\Hosihikari.Minecraft.dll</HintPath>
+    <Reference Include="Minecraft.Extension">
+      <HintPath>..\..\Extension\src\bin\Release\net7.0\Hosihikari.Minecraft.Extension.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="NativeInterop">

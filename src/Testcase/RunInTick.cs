@@ -1,4 +1,7 @@
-﻿namespace Hosihikari.PluginUnitTest.Testcase;
+﻿using Hosihikari.Minecraft.Extension;
+using Hosihikari.Minecraft.Extension.Async;
+
+namespace Hosihikari.UnitTest.Testcase;
 
 internal class RunInTick : TestItem
 {
@@ -7,18 +10,18 @@ internal class RunInTick : TestItem
         _ = Task.Run(async () =>
         {
             await Task.Delay(1000).ConfigureAwait(false);
-            await Minecraft.Async.RunInTickVoid.StartAsync(() =>
+            await RunInTickVoid.StartAsync(() =>
             {
-                if (!Minecraft.LevelTick.IsInTickThread)
+                if (!LevelTick.IsInTickThread)
                 {
                     MarkFailed("Not in tick thread.");
                 }
             });
             const int test = 2333;
             await Task.Delay(1000).ConfigureAwait(false);
-            var result = await Minecraft.Async.RunInTick<int>.StartAsync(() =>
+            var result = await RunInTick<int>.StartAsync(() =>
             {
-                if (!Minecraft.LevelTick.IsInTickThread)
+                if (!LevelTick.IsInTickThread)
                 {
                     MarkFailed("Not in tick thread.");
                 }
