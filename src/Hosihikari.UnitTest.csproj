@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Hosihikari.Loader">
-      <HintPath>..\..\Loader\src\bin\Release\net7.0\Hosihikari.Loader.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Hosihikari.Minecraft">
+      <HintPath>..\..\Minecraft\src\bin\Release\net7.0\Hosihikari.Minecraft.dll</HintPath>
     </Reference>
     <Reference Include="Hosihikari.Minecraft.Extension">
       <HintPath>..\..\Extension\src\bin\Release\net7.0\Hosihikari.Minecraft.Extension.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Hosihikari.NativeInterop">
       <HintPath>..\..\NativeInterop\src\bin\Release\net7.0\Hosihikari.NativeInterop.dll</HintPath>
-      <Private>False</Private>
+    </Reference>
+	  <Reference Include="Hosihikari.PluginManager">
+      <HintPath>..\..\PluginManager\src\bin\Release\net7.0\Hosihikari.PluginManager.dll</HintPath>
     </Reference>
   </ItemGroup>
 
