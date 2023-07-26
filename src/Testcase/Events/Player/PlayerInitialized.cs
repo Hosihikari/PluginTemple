@@ -15,7 +15,7 @@ internal class PlayerInitialized : TestItem
         Minecraft.Extension.Events.Events.PlayerInitialized.Before -= PlayerInitialized_Before;
         try
         {
-            WriteLine(e.ServerPlayer.Name + "Initialized");
+            WriteLine(e.ServerPlayer.Name + " Initialized");
             MarkSuccess();
         }
         catch (Exception exception)

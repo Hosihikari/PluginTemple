@@ -15,7 +15,7 @@ internal class PlayerJoin : TestItem
         Minecraft.Extension.Events.Events.PlayerJoin.Before -= PlayerJoin_Before;
         try
         {
-            WriteLine(e.ServerPlayer.Name + "Join");
+            WriteLine(e.ServerPlayer.Name + " Joined");
             MarkSuccess();
         }
         catch (Exception exception)

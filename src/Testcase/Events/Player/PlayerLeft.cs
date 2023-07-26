@@ -15,7 +15,7 @@ internal class PlayerLeft : TestItem
         Minecraft.Extension.Events.Events.PlayerLeft.Before -= PlayerLeft_Before;
         try
         {
-            WriteLine(e.ServerPlayer.Name + "Left");
+            WriteLine(e.ServerPlayer.Name + " Left");
             MarkSuccess();
         }
         catch (Exception exception)
