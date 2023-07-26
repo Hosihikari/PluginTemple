@@ -16,6 +16,7 @@
     </Reference>
     <Reference Include="Hosihikari.NativeInterop">
       <HintPath>..\..\NativeInterop\src\bin\Release\net7.0\Hosihikari.NativeInterop.dll</HintPath>
+	</Reference>
   </ItemGroup>
 
 </Project>
