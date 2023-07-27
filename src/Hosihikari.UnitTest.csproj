@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="Hosihikari.PluginManager" Version="1.0.1" />
+    <Reference Include="Hosihikari.Logging">
+      <HintPath>..\..\Logging\src\bin\Release\net7.0\Hosihikari.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Hosihikari.Minecraft">
       <HintPath>..\..\Minecraft\src\bin\Release\net7.0\Hosihikari.Minecraft.dll</HintPath>
     </Reference>

@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
+using Hosihikari.Logging;
 using Hosihikari.PluginManager;
 using Hosihikari.UnitTest;
 
@@ -9,19 +10,16 @@ namespace Hosihikari.UnitTest;
 
 public class UnitTest : IEntryPoint
 {
+    Logger Logger = new(nameof(UnitTest));
+
     public void Initialize(AssemblyPlugin plugin)
     {
-        WriteLine(" Searching All Testcase.");
+        Logger.Debug("Searching All Testcase.");
         AddAllItemToList();
-        WriteLine(" Searching All Testcase Success.");
+        Logger.Debug($"Searching All Testcase Success. Total {TaskList.Count}");
     }
 
     internal List<TestItem> TaskList = new();
-
-    private void WriteLine(string str)
-    {
-        Console.WriteLine(nameof(UnitTest) + " >> " + str);
-    }
 
     private void UpdateStatistical()
     {
@@ -29,7 +27,7 @@ public class UnitTest : IEntryPoint
         var failed = TaskList.Count(x => x.IsSuccess is false);
         var total = TaskList.Count;
         var waiting = TaskList.Count(x => x.IsSuccess is null);
-        WriteLine($"Total: {total} Success: {success} Failed: {failed} Waiting: {waiting}");
+        Logger.Info($"Total: {total} Success: {success} Failed: {failed} Waiting: {waiting}");
     }
 
     private void AddAllItemToList([CallerFilePath] string sourceFile = "")
@@ -47,22 +45,22 @@ public class UnitTest : IEntryPoint
             )
             {
                 item.OnWriteError += (s, file, line) =>
-                    WriteLine($"[Error] {s}\n\t{file[trimLength..]} {line}");
+                    Logger.Error($"{s}\n\t{file[trimLength..]} {line}");
                 item.OnWriteLine += (s, file, line) =>
-                    WriteLine($"[Info] {s}\n\t{file[trimLength..]} {line}");
+                    Logger.Info($"{s}\n\t{file[trimLength..]} {line}");
                 item.OnSuccess += (file, line) =>
                 {
-                    WriteLine($"[Success] {file[trimLength..]} {line}");
+                    Logger.Info("Success", $"{file[trimLength..]} {line}");
                     UpdateStatistical();
                 };
                 item.OnFailed += (s, file, line) =>
                 {
-                    WriteLine($"[Failed] {s}\n\t{file[trimLength..]} {line}");
+                    Logger.Warn("Failed", $"{s}\n\t{file[trimLength..]} {line}");
                     UpdateStatistical();
                 };
                 item.Start();
                 TaskList.Add(item);
-                WriteLine(" Add Testcase: " + type.Name);
+                Logger.Debug(" Add Testcase: " + type.Name);
             }
         }
     }
