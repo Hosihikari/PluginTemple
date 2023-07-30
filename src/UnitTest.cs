@@ -27,7 +27,9 @@ public class UnitTest : IEntryPoint
         var failed = TaskList.Count(x => x.IsSuccess is false);
         var total = TaskList.Count;
         var waiting = TaskList.Count(x => x.IsSuccess is null);
-        Logger.Info($"Total: {total} Success: {success} Failed: {failed} Waiting: {waiting}");
+        Logger.Information(
+            $"Total: {total} Success: {success} Failed: {failed} Waiting: {waiting}"
+        );
     }
 
     private void AddAllItemToList([CallerFilePath] string sourceFile = "")
@@ -47,15 +49,15 @@ public class UnitTest : IEntryPoint
                 item.OnWriteError += (s, file, line) =>
                     Logger.Error($"{s}\n\t{file[trimLength..]} {line}");
                 item.OnWriteLine += (s, file, line) =>
-                    Logger.Info($"{s}\n\t{file[trimLength..]} {line}");
+                    Logger.Information($"{s}\n\t{file[trimLength..]} {line}");
                 item.OnSuccess += (file, line) =>
                 {
-                    Logger.Info("Success", $"{file[trimLength..]} {line}");
+                    Logger.Information($"Success: {file[trimLength..]} {line}");
                     UpdateStatistical();
                 };
                 item.OnFailed += (s, file, line) =>
                 {
-                    Logger.Warn("Failed", $"{s}\n\t{file[trimLength..]} {line}");
+                    Logger.Warning($"Success: {s}\n\t{file[trimLength..]} {line}");
                     UpdateStatistical();
                 };
                 item.Start();
