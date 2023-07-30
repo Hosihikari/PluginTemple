@@ -57,7 +57,7 @@ public class UnitTest : IEntryPoint
                 };
                 item.OnFailed += (s, file, line) =>
                 {
-                    Logger.Warning($"Success: {s}\n\t{file[trimLength..]} {line}");
+                    Logger.Warning($"Failed: {s}\n\t{file[trimLength..]} {line}");
                     UpdateStatistical();
                 };
                 item.Start();
