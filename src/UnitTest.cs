@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
-using Hosihikari.Logging;
 using Hosihikari.PluginManager;
 using Hosihikari.UnitTest;
 
