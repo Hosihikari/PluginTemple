@@ -1,4 +1,4 @@
-﻿using Hosihikari.Minecraft.Extension;
+using Hosihikari.Minecraft.Extension;
 using Hosihikari.Minecraft.Extension.Async;
 
 namespace Hosihikari.UnitTest.Testcase;

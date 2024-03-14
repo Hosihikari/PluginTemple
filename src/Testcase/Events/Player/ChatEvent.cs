@@ -1,4 +1,4 @@
-﻿namespace Hosihikari.UnitTest.Testcase.Events.Player;
+namespace Hosihikari.UnitTest.Testcase.Events.Player;
 
 internal class ChatEvent : TestItem
 {
